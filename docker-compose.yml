@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  app:
+    image: openswoole/swoole
+    environment:
+      AUTORELOAD_PROGRAMS: "swoole"
+      AUTORELOAD_ANY_FILES: 0
+    ports:
+      - 80:9501
+    volumes:
+      - ./src:/var/www
+
+  telegram-bot-api:
+    image: aiogram/telegram-bot-api:latest
+    environment:
+      TELEGRAM_API_ID: "10821211"
+      TELEGRAM_API_HASH: "b733e99854fc1fd09aeff1ca6eccfa0e"
+      TELEGRAM_LOCAL: "true"
+    volumes:
+      - telegram-bot-api-data:/var/lib/telegram-bot-api
+      
+volumes:
+  telegram-bot-api-data:
