@@ -3,7 +3,6 @@
 
 declare(strict_types=1);
 
-
 use Swoole\Http\Server;
 use Swoole\Http\Response;
 use Swoole\Http\Request;
